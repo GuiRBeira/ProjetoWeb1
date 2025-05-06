@@ -1,41 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema QnA</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema QnA</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Análise de Texto</h1>
-        
-        <div class="input-section">
-            <h2>Contexto:</h2>
-            <textarea id="context" rows="10" placeholder="Cole aqui o texto que servirá como base para as respostas em ingles..."></textarea>
-            
-        </div>
-        
-        <div class="input-section">
-            <h2>Pergunta:</h2>
-            <input type="text" id="question" placeholder="Digite sua pergunta em ingles...">
-            <button id="ask-btn">Perguntar</button>
-        </div>
-        
-        <div id="answer" class="answer-section"></div>
-        
-        <div class="debug-section">
-            <h3>Informações de Debug:</h3>
-            <div id="debug-info"></div>
-        </div>
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="header-wrapper">
+      <header>
+        <h1>Bem-vindo ao Sistema QnA</h1>
+        <nav>
+          <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </nav>
+      </header>
     </div>
 
-    <!-- TensorFlow.js e Modelo QnA -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/qna"></script>
-    
-    <!-- Nosso JavaScript -->
-    <script src="app.js"></script>
+    <!-- Main content -->
+    <div class="main-wrapper">
+      <main>
+        <section class="analysis-section">
+          <h2>Análise de Texto</h2>
+
+          <!-- Context input -->
+          <div class="input-section">
+            <h3>Contexto:</h3>
+            <div class="input-wrapper">
+              <textarea id="context" rows="10" placeholder="Cole aqui o texto base em inglês..."></textarea>
+            </div>
+          </div>
+          
+          <!-- Question input -->
+          <div class="input-section">
+            <h3>Pergunta:</h3>
+            <div class="input-wrapper">
+              <input type="text" id="question" placeholder="Digite sua pergunta em inglês...">
+              <div class="button-wrapper">
+                <button class="button" id="submit-button">Perguntar</button>
+                <button class="button" onclick="alternarTema()">Alternar Tema</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Answer output -->
+          <div class="answer-wrapper">
+            <div id="answer" class="answer-section"></div>
+          </div>
+
+          <!-- Debug info -->
+          <div class="debug-wrapper">
+            <div class="debug-section">
+              <h3>Informações de Debug:</h3>
+              <div id="debug-info"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-wrapper">
+      <footer>
+        <p>&copy; 2025 Guilherme. Todos os direitos reservados.</p>
+      </footer>
+    </div>
+
+  </div>
+
+  <!-- TensorFlow.js e Modelo QnA -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/qna"></script>
+
+  <!-- Nosso JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
