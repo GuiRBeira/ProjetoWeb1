@@ -1,11 +1,10 @@
-
 // app.js - Sistema de Perguntas e Respostas com TensorFlow.js QnA
 
 let qnaModel;
 
 const contextTextarea = document.getElementById('context');
 const questionInput = document.getElementById('question');
-const askButton = document.getElementById('ask-btn');
+const askButton = document.getElementById('submit-button');
 const answerDiv = document.getElementById('answer');
 const debugDiv = document.getElementById('debug-info');
 
